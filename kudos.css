@@ -1,0 +1,165 @@
+p.count{
+	display: block;
+}
+figure{
+	display:block;
+	position:relative;
+	margin:0 auto;
+	left:auto;
+	top:auto;
+	margin-top:20px;
+}
+figure.kudo{height:100px;margin-top:30px}
+figure.filling.kudo{height:150px}
+/*figure.kudo article a.kudos p{text-align:center;display:block;margin:0;padding:0;line-height:50px;width:auto;height:auto}*/
+a.kudos.animate div.circle div.filled{
+	-webkit-animation-name:hoverPulse;
+	-moz-animation-name:hoverPulse;
+	-webkit-animation-duration:5s;
+	-moz-animation-duration:5s;
+	-webkit-animation-iteration-count:infinite;
+	-moz-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-moz-animation-timing-function:linear;
+	-webkit-transform:translateZ(0)}
+a.kudos.filling div.circle div.filled{
+	width:42px;
+	height:42px;
+	margin-left:-21px;
+	margin-top:-21px}
+a.kudos.completed div.circle div.filled{
+	width:42px;
+	height:42px;
+	margin-left:-21px;
+	margin-top:-21px;
+	background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;
+	background-size:80%;
+	-moz-background-size:80%}
+a.kudos p{
+	width:auto;
+	display:block;
+	text-transform:uppercase;
+	line-height:18px;
+	font-family:"freight-sans-pro",sans-serif;
+	font-weight:900;
+	font-size:20px;
+	margin-top:5px;
+	color:#000}
+a.kudos p span{
+	font-size:11px;
+	font-weight:800;
+	letter-spacing:1px;
+	line-height:11px;
+	display:block;
+	margin-top:5px}
+a.kudos p span.dont-move{
+	font-size:18px;
+	text-transform:none;
+	line-height:22px;
+	width:200px;
+	margin-left:-50px;
+	margin-top:8px;
+	letter-spacing:0}
+div.pulse.animate{
+	-webkit-animation-name:dotPulse;
+	-moz-animation-name:dotPulse;
+	-webkit-animation-duration:5s;
+	-moz-animation-duration:5s;
+	-webkit-animation-iteration-count:infinite;
+	-moz-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-moz-animation-timing-function:linear;
+	-webkit-transform:translateZ(0)}
+@-webkit-keyframes 'dotPulse'{0%{-webkit-transform:scale(0.55);opacity:.2}
+10%{-webkit-transform:scale(0.65);opacity:.2}
+30%{-webkit-transform:scale(0.7);opacity:.2}
+100%{opacity:0;-webkit-transform:scale(0.9)}
+}
+@-moz-keyframes dotPulse{0%{-moz-transform:scale(0.7);opacity:0}
+10%{-moz-transform:scale(0.8);opacity:.2}
+30%{-moz-transform:scale(0.75);opacity:.1}
+100%{opacity:0;-moz-transform:scale(1)}
+}
+@-webkit-keyframes 'hoverPulse'{0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
+@-moz-keyframes hoverPulse{0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
+a.kudos{
+	position:absolute;
+	top:auto;
+	right:auto;
+	left:50%;
+	bottom:auto;
+	clear:both;
+	width:100px;
+	height:auto;
+	margin-left:-50px;
+	text-align:center;
+	-webkit-transition-property:margin,width;
+	-webkit-transition-duration:.5s;
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-property:margin,width;
+	-moz-transition-duration:.5s;
+	-moz-transition-timing-function:ease-in-out}
+figure.kudo article a.kudos p{
+	text-align:center;
+	display:block;
+	margin:0;
+	padding:0;
+	line-height:50px;
+	width:auto;
+	height:auto}
+a.kudos.filling{
+	margin-top:-50px;
+	margin-left:-100px;
+	width:200px}
+a.kudos.filling p.notice span.dont-move{
+	position:fixed;
+	left:10px;
+	right:20px;
+	top:10px;
+	background-color:rgba(0,0,0,0.8);
+	color:#fff;
+	font-size:30px;
+	width:auto;
+	margin:0;
+	line-height:60px;
+	border-radius:30px}
+a.kudos div.circle{
+	-webkit-transition-property:width,margin,top,left,height,width;
+	-webkit-transition-duration:.5s;
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-property:all;
+	-moz-transition-duration:.5s;
+	-moz-transition-timing-function:ease-in-out}
+a.kudos.filling div.circle{
+	background-color:#fff;
+	width:120px;
+	height:120px;
+	border-radius:50%;
+	margin:0 auto;
+	border:15px solid #000}
+a.kudos div.circle div.filled{
+	background:rgba(0,0,0,1);
+	-webkit-transition-property:background-color,width,height,margin;
+	-webkit-transition-duration:1s;
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-property:background-color,width,height,margin;
+	-moz-transition-duration:1s;
+	-moz-transition-timing-function:ease-in-out}
+a.kudos.filling div.circle div.filled{
+	width:200px;
+	height:200px;
+	margin-left:-100px;
+	margin-top:-100px;
+	background:rgba(0,0,0,0.7)}
+a.kudos.completed div.circle div.filled{
+	width:152px;
+	height:152px;
+	margin-left:-76px;
+	margin-top:-76px}
+
