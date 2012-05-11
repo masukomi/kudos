@@ -1,8 +1,11 @@
 %figure.kudo
-	%a.kudos.kudoable.animate{:id=>"kudo-#{@post.id}"}
+	%a.kudos.kudoable{:id=>"kudo-#{@post.id}"}
 		.circle
 			.filled &nbsp;
 		%p.count
-			= @post.kudos
+			%span{:id=>"kudo-#{@post.id}-count"}
+				= @post.kudos
 			%span.identifier
 				Kudos
+	.pbar
+		.progress &nbsp;

@@ -1,6 +1,30 @@
 p.count{
 	display: block;
 }
+div.circle{
+	background-color:#fff;
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	margin:0 auto;
+	border:4px solid #000;
+	position:relative}
+div.circle div.filled{
+	background-color:#000;
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-5px;
+	margin-top:-5px;
+	-webkit-transition-property:margin,width,height,color;
+	-webkit-transition-duration:1s;
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-property:margin,width,height,color;
+	-moz-transition-duration:1s;
+	-moz-transition-timing-function:ease-in-out}
 figure{
 	display:block;
 	position:relative;
@@ -9,7 +33,7 @@ figure{
 	top:auto;
 	margin-top:20px;
 }
-figure.kudo{height:100px;margin-top:30px}
+figure.kudo{height:100px;margin-top:30px;}
 figure.filling.kudo{height:150px}
 /*figure.kudo article a.kudos p{text-align:center;display:block;margin:0;padding:0;line-height:50px;width:auto;height:auto}*/
 a.kudos.animate div.circle div.filled{
@@ -21,20 +45,23 @@ a.kudos.animate div.circle div.filled{
 	-moz-animation-iteration-count:infinite;
 	-webkit-animation-timing-function:linear;
 	-moz-animation-timing-function:linear;
-	-webkit-transform:translateZ(0)}
+	-webkit-transform:translateZ(0);
+}
 a.kudos.filling div.circle div.filled{
 	width:42px;
 	height:42px;
 	margin-left:-21px;
-	margin-top:-21px}
+	margin-top:-21px;
+}
 a.kudos.completed div.circle div.filled{
 	width:42px;
 	height:42px;
 	margin-left:-21px;
 	margin-top:-21px;
-	background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;
+	background:#000 url(images/heart_60x60.png) center center no-repeat;
 	background-size:80%;
-	-moz-background-size:80%}
+	-moz-background-size:80%;
+}
 a.kudos p{
 	width:auto;
 	display:block;
@@ -44,14 +71,16 @@ a.kudos p{
 	font-weight:900;
 	font-size:20px;
 	margin-top:5px;
-	color:#000}
+	color:#000;
+}
 a.kudos p span{
 	font-size:11px;
 	font-weight:800;
 	letter-spacing:1px;
 	line-height:11px;
 	display:block;
-	margin-top:5px}
+	margin-top:5px;
+}
 a.kudos p span.dont-move{
 	font-size:18px;
 	text-transform:none;
@@ -59,7 +88,8 @@ a.kudos p span.dont-move{
 	width:200px;
 	margin-left:-50px;
 	margin-top:8px;
-	letter-spacing:0}
+	letter-spacing:0;
+}
 div.pulse.animate{
 	-webkit-animation-name:dotPulse;
 	-moz-animation-name:dotPulse;
@@ -104,7 +134,8 @@ a.kudos{
 	-webkit-transition-timing-function:ease-in-out;
 	-moz-transition-property:margin,width;
 	-moz-transition-duration:.5s;
-	-moz-transition-timing-function:ease-in-out}
+	-moz-transition-timing-function:ease-in-out;
+}
 figure.kudo article a.kudos p{
 	text-align:center;
 	display:block;
@@ -112,23 +143,26 @@ figure.kudo article a.kudos p{
 	padding:0;
 	line-height:50px;
 	width:auto;
-	height:auto}
+	height:auto;
+}
 a.kudos.filling{
 	margin-top:-50px;
 	margin-left:-100px;
-	width:200px}
+	width:200px;
+}
 a.kudos.filling p.notice span.dont-move{
-	position:fixed;
-	left:10px;
-	right:20px;
-	top:10px;
-	background-color:rgba(0,0,0,0.8);
-	color:#fff;
-	font-size:30px;
-	width:auto;
-	margin:0;
-	line-height:60px;
-	border-radius:30px}
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 110px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	font-size: 20px;
+	width: auto;
+	margin: 0;
+	line-height: 60px;
+	border-radius: 30px;
+}
 a.kudos div.circle{
 	-webkit-transition-property:width,margin,top,left,height,width;
 	-webkit-transition-duration:.5s;
@@ -158,8 +192,7 @@ a.kudos.filling div.circle div.filled{
 	margin-top:-100px;
 	background:rgba(0,0,0,0.7)}
 a.kudos.completed div.circle div.filled{
-	width:152px;
-	height:152px;
-	margin-left:-76px;
-	margin-top:-76px}
-
+	width:42px;
+	height:42px;
+	border-radius:50%;
+}
