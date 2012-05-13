@@ -30,6 +30,6 @@ The animation of the text isn't bad but could use some love from a css wizard. P
 Kudos currently depends on jQuery and the jQuery Cookie plugin, but as there is so little code it would be very easy to modify to use a different library if you had such a need.
 
 ## License
-This code is distributed in the Public Domain, however it includes a copy of jQuery which is [dual licensed](http://jquery.org/license/) under MIT or GPL (your choice). 
+This code is distributed under the MIT license, however it includes a copy of jQuery which is [dual licensed](http://jquery.org/license/) under MIT or GPL (your choice). Portions of the CSS code are from the [wordpress-svbtle](https://github.com/scavone/wordpress-svbtle) Wordpress theme.
 
 It also includes a copy of [jQuery Cookie](https://github.com/carhartl/jquery-cookie) which doesn't appear to have any license designation. 
