@@ -1,0 +1,35 @@
+# Kudos
+
+[Dustin Kurtis](http://dustincurtis.com/) came up with an excellent idea for the [Svbtle](http://svbtle.com) blogging network (go visit [Svbtle.com](http://Svbtle.com/) to see an example). He called them Kudos. They're little widgets next to each post that enable users to give "Kudos" to posts they really like. You hover over the widget, it gives a fun little animation, and changes the icon and count after a moment. 
+
+This is an example implementation of that for you to use in your own blog.
+
+## Screenshots
+Start -> 
+![pre-kudo](screenshots/zero_kudos.jpg)
+-> Funky Animation Here-> 
+![post-kudo](screenshots/kudo_given.jpg)
+-> Finish.
+
+# Usage: 
+Short version: Add this code to your blog, replace a couple id tags with dynamically generated ids, and add an AJAX call to a method all prepared for you.
+
+## index.html / index.haml 
+There's an `a` tag in there with an id of `kudos-1` and later on a span with the id of `kudos-1-count` The code presumes that you will be replacing the number 1 in both instances with a unique identifier for the current post. This does not have to be an integer. 
+
+The code does support multiple kudos on a page, for example with multiple posts on the front page of a blog, but assumes that each post has a unique id. 
+
+## kudos.js 
+`kudos.js` has a `sendKudoInfoToServer(element_id)` method: The `element_id` from the example would be `kudos-1`. Modify the contents of this method to strip out the "kudos-" from the `element_id` and perform an AJAX call to your server. 
+
+## Improvements
+Make some!  ;)  
+The animation of the text isn't bad but could use some love from a css wizard. Pull-requests will be happily applied. 
+
+## jQuery
+Kudos currently depends on jQuery and the jQuery Cookie plugin, but as there is so little code it would be very easy to modify to use a different library if you had such a need.
+
+## License
+This code is distributed in the Public Domain, however it includes a copy of jQuery which is [dual licensed](http://jquery.org/license/) under MIT or GPL (your choice). 
+
+It also includes a copy of [jQuery Cookie](https://github.com/carhartl/jquery-cookie) which doesn't appear to have any license designation. 
