@@ -6,9 +6,9 @@ This is an example implementation of that for you to use in your own blog.
 
 ## Screenshots
 Start -> 
-![pre-kudo](screenshots/zero_kudos.jpg)
+![pre-kudo](https://github.com/masukomi/kudos/raw/master/screenshots/zero_kudos.jpg)
 -> Funky Animation Here-> 
-![post-kudo](screenshots/kudo_given.jpg)
+![post-kudo](https://github.com/masukomi/kudos/raw/master/screenshots/kudo_given.jpg)
 -> Finish.
 
 # Usage: 
