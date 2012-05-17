@@ -18,7 +18,7 @@ function sendKudoInfoToServer(element_id){
 function startKudoing(element) {
 	element.oldKudoText = element.children("p.count").html();
 	element.children("p.count").hide();
-	element.append('<p class="count notice"><span class="dont-move">Giving Kudos...</span></p>');
+	//element.append('<p class="count notice"><span class="dont-move">Giving Kudos...</span></p>');
 	element.addClass("filling").removeClass("animate");
 	element.parent("figure").addClass("filling");
 	element_id = element.attr('id')
@@ -30,7 +30,7 @@ function endKudoing(element) {
 		element.removeClass("filling").addClass("animate");
 		element.parent("figure").removeClass("filling");
 		element.children("p.count").show();
-		element.children("p.notice").remove();
+		//element.children("p.notice").remove();
 		element.children("p.count").fadeIn("slow");
 	}
 	
@@ -48,7 +48,7 @@ function sendKudo(element_id) {
 		var count = $('#'+element_id+'-count');
 		newnum = parseInt(count.text()) + 1;
 		count.html(newnum);
-		element.children("p.notice").hide().remove();
+		//element.children("p.notice").hide().remove();
 		element.children("p.count").show();
 		count.fadeIn();
 	}

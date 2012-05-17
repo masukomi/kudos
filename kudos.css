@@ -151,10 +151,10 @@ a.kudos.filling{
 	width:200px;
 }
 a.kudos.filling p.notice span.dont-move{
-	position: relative;
+	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 110px;
+	bottom: auto;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	font-size: 20px;
@@ -162,6 +162,7 @@ a.kudos.filling p.notice span.dont-move{
 	margin: 0;
 	line-height: 60px;
 	border-radius: 30px;
+	min-width: 200px;
 }
 a.kudos div.circle{
 	-webkit-transition-property:width,margin,top,left,height,width;
