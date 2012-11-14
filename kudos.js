@@ -5,6 +5,8 @@ function sendKudoInfoToServer(element_id){
 	// to make it match the id of the post on your server
 	// send an ajax call to your server that the kudo for that 
 	// post has been incremented.
+
+	// TODO: include a flag that indicates whether the kudo should be incremented up or down (since you can unkudo something)
 	if (! sending_kudo){
 		sending_kudo = true;
 			// just to guarantee you don't accidentally send two 
