@@ -1,30 +1,44 @@
 p.count{
 	display: block;
 }
-div.circle{
+div.opening{
 	background-color:#fff;
-	width:40px;
-	height:40px;
+	width:50px;
+	height:50px;
 	border-radius:50%;
 	margin:0 auto;
-	border:4px solid #000;
+	border:5px solid #000;
 	position:relative}
-div.circle div.filled{
+div.opening div.circle{
 	background-color:#000;
-	width:10px;
-	height:10px;
+	width:50px;
+	height:50px;
+	margin-left:-25px;
+	margin-top:-25px;
 	border-radius:50%;
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin-left:-5px;
-	margin-top:-5px;
-	-webkit-transition-property:margin,width,height,color;
+	transition-property: transform,background-color;
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+	transform: scale(0.3);
+	transition-style: preserve-3d;
+	-webkit-transition-property: -webkit-transform,background-color;
 	-webkit-transition-duration:1s;
-	-webkit-transition-timing-function:ease-in-out;
-	-moz-transition-property:margin,width,height,color;
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transform: scale(0.3);
+	-webkit-transform-style: preserve-3d;
+	-moz-transition-property: -moz-transform,color;
 	-moz-transition-duration:1s;
-	-moz-transition-timing-function:ease-in-out}
+	-moz-transition-timing-function:ease-out;
+	-moz-transform: scale(0.3);	
+	-moz-transform-style: preserve-3d;
+	backface-visibility: visible;
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+}
+
 figure{
 	display:block;
 	position:relative;
@@ -33,55 +47,44 @@ figure{
 	top:auto;
 	margin-top:20px;
 }
-figure.kudo{height:100px;margin-top:30px;}
-figure.filling.kudo{height:150px}
-/*figure.kudo article a.kudos p{text-align:center;display:block;margin:0;padding:0;line-height:50px;width:auto;height:auto}*/
-a.kudos.animate div.circle div.filled{
-	-webkit-animation-name:hoverPulse;
-	-moz-animation-name:hoverPulse;
-	-webkit-animation-duration:5s;
-	-moz-animation-duration:5s;
-	-webkit-animation-iteration-count:infinite;
-	-moz-animation-iteration-count:infinite;
-	-webkit-animation-timing-function:linear;
-	-moz-animation-timing-function:linear;
-	-webkit-transform:translateZ(0);
+figure.kudo{
+	position: absolute;
+	right: 50%;
+	margin-right: -30px;
+	top: 30px;
+	text-align:center;
 }
-a.kudos.filling div.circle div.filled{
-	width:42px;
-	height:42px;
-	margin-left:-21px;
-	margin-top:-21px;
-}
-a.kudos.completed div.circle div.filled{
-	width:42px;
-	height:42px;
-	margin-left:-21px;
-	margin-top:-21px;
-	background:#000 url(images/heart_60x60.png) center center no-repeat;
+/*figure.kudo article a.kudobject p{text-align:center;display:block;margin:0;padding:0;line-height:50px;width:auto;height:auto}*/
+
+.kudo.complete a.kudobject div.opening div.circle{
+	background-image: url(images/heart_60x60.png);
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-color: #000;
 	background-size:80%;
 	-moz-background-size:80%;
 }
-a.kudos p{
+a.count {
+	text-decoration: none;
+}
+a.count span {
 	width:auto;
-	display:block;
 	text-transform:uppercase;
-	line-height:18px;
 	font-family:"freight-sans-pro",sans-serif;
-	font-weight:900;
-	font-size:20px;
 	margin-top:5px;
 	color:#000;
-}
-a.kudos p span{
-	font-size:11px;
 	font-weight:800;
-	letter-spacing:1px;
-	line-height:11px;
 	display:block;
+	line-height: 13px;
 	margin-top:5px;
 }
-a.kudos p span.dont-move{
+a.count span.num {
+	font-size: 18px;
+}
+a.count span.txt {
+	font-size: 11px;
+}
+a.count p span.dont-move{
 	font-size:18px;
 	text-transform:none;
 	line-height:22px;
@@ -90,110 +93,84 @@ a.kudos p span.dont-move{
 	margin-top:8px;
 	letter-spacing:0;
 }
-div.pulse.animate{
-	-webkit-animation-name:dotPulse;
-	-moz-animation-name:dotPulse;
-	-webkit-animation-duration:5s;
-	-moz-animation-duration:5s;
-	-webkit-animation-iteration-count:infinite;
-	-moz-animation-iteration-count:infinite;
-	-webkit-animation-timing-function:linear;
-	-moz-animation-timing-function:linear;
-	-webkit-transform:translateZ(0)}
-@-webkit-keyframes 'dotPulse'{0%{-webkit-transform:scale(0.55);opacity:.2}
-10%{-webkit-transform:scale(0.65);opacity:.2}
-30%{-webkit-transform:scale(0.7);opacity:.2}
-100%{opacity:0;-webkit-transform:scale(0.9)}
+a.kudobject{
+	display: block;
+	cursor: pointer;
 }
-@-moz-keyframes dotPulse{0%{-moz-transform:scale(0.7);opacity:0}
-10%{-moz-transform:scale(0.8);opacity:.2}
-30%{-moz-transform:scale(0.75);opacity:.1}
-100%{opacity:0;-moz-transform:scale(1)}
+
+.kudo.active a.kudobject div.opening div.circle{
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);	
+	background:rgba(0,0,0,0.7)
 }
-@-webkit-keyframes 'hoverPulse'{0%{opacity:1}
-50%{opacity:.5}
-100%{opacity:1}
+
+.kudo.complete a.kudobject div.opening div.circle{
+	transition-property: none;
+	animation: bounce 1s;
+	animation-iteration-count: 1;
+	transform: scale(0.85);
+	-webkit-transition-property: none;
+	-webkit-animation: bounce 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform: scale(0.85);
+	-moz-transition-property: none;
+	-moz-animation: bounce 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform: scale(0.85);
 }
-@-moz-keyframes hoverPulse{0%{opacity:1}
-50%{opacity:.5}
-100%{opacity:1}
+
+@keyframes bounce { 
+  0% {
+    transform: scale(1.1);
+    background-color: #000;
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: .7;
+    background-color: #000;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  80% { transform: scale(0.95) }
+  100% { transform: scale(0.85) }
 }
-a.kudos{
-	position:absolute;
-	top:auto;
-	right:auto;
-	left:50%;
-	bottom:auto;
-	clear:both;
-	width:100px;
-	height:auto;
-	margin-left:-50px;
-	text-align:center;
-	-webkit-transition-property:margin,width;
-	-webkit-transition-duration:.5s;
-	-webkit-transition-timing-function:ease-in-out;
-	-moz-transition-property:margin,width;
-	-moz-transition-duration:.5s;
-	-moz-transition-timing-function:ease-in-out;
+@-webkit-keyframes bounce { 
+  0% {
+    -webkit-transform: scale(1.1);
+    background-color: #000;
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.6);
+    opacity: .7;
+    background-color: #000;
+  }
+  60% {
+    -webkit-transform: scale(0.6);
+    opacity: 1;
+	}
+  80% { -webkit-transform: scale(0.95) }
+  100% { -webkit-transform: scale(0.85) }
 }
-figure.kudo article a.kudos p{
-	text-align:center;
-	display:block;
-	margin:0;
-	padding:0;
-	line-height:50px;
-	width:auto;
-	height:auto;
-}
-a.kudos.filling{
-	margin-top:-50px;
-	margin-left:-100px;
-	width:200px;
-}
-a.kudos.filling p.notice span.dont-move{
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: auto;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-	font-size: 20px;
-	width: auto;
-	margin: 0;
-	line-height: 60px;
-	border-radius: 30px;
-	min-width: 200px;
-}
-a.kudos div.circle{
-	-webkit-transition-property:width,margin,top,left,height,width;
-	-webkit-transition-duration:.5s;
-	-webkit-transition-timing-function:ease-in-out;
-	-moz-transition-property:all;
-	-moz-transition-duration:.5s;
-	-moz-transition-timing-function:ease-in-out}
-a.kudos.filling div.circle{
-	background-color:#fff;
-	width:120px;
-	height:120px;
-	border-radius:50%;
-	margin:0 auto;
-	border:15px solid #000}
-a.kudos div.circle div.filled{
-	background:rgba(0,0,0,1);
-	-webkit-transition-property:background-color,width,height,margin;
-	-webkit-transition-duration:1s;
-	-webkit-transition-timing-function:ease-in-out;
-	-moz-transition-property:background-color,width,height,margin;
-	-moz-transition-duration:1s;
-	-moz-transition-timing-function:ease-in-out}
-a.kudos.filling div.circle div.filled{
-	width:200px;
-	height:200px;
-	margin-left:-100px;
-	margin-top:-100px;
-	background:rgba(0,0,0,0.7)}
-a.kudos.completed div.circle div.filled{
-	width:42px;
-	height:42px;
-	border-radius:50%;
+@-moz-keyframes bounce { 
+  0% {
+    -moz-transform: scale(1.1);
+    background-color: #000;
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: scale(1.6);
+    opacity: .7;
+    background-color: #000;
+  }
+  60% {
+    -moz-transform: scale(0.6);
+    opacity: 1;
+  }
+  80% { -moz-transform: scale(0.95) }
+  100% { -moz-transform: scale(0.85) }
 }

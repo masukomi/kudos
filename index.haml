@@ -1,11 +1,9 @@
-%figure.kudo
-	%a.kudos.kudoable{:id=>"kudo-#{@post.id}"}
-		.circle
-			.filled &nbsp;
-		%p.count
-			%span{:id=>"kudo-#{@post.id}-count"}
-				= @post.kudos
-			%span.identifier
-				Kudos
-	.pbar
-		.progress &nbsp;
+%figure.kudo.kudoable{:id=>"kudo-#{@post.id}"}
+	%a.kudos
+		.opening
+			.circle &nbsp;
+	%a.count
+		%span.count
+			= @post.kudos
+		%span.txt
+			Kudos
