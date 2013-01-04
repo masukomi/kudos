@@ -55,7 +55,8 @@ class Kudoable
   decrementCount: ->
     @setCount @currentCount() - 1
 
-# jQuery plugin
-$.fn.kudoable = ->
-  @each ->
-    kudoable = new Kudoable $(this)
+# jQuery wrapper
+jQuery ($) ->
+  $.fn.kudoable = ->
+    @each ->
+      new Kudoable $(this)

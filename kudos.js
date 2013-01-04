@@ -90,11 +90,12 @@
 
   })();
 
-  $.fn.kudoable = function() {
-    return this.each(function() {
-      var kudoable;
-      return kudoable = new Kudoable($(this));
-    });
-  };
+  jQuery(function($) {
+    return $.fn.kudoable = function() {
+      return this.each(function() {
+        return new Kudoable($(this));
+      });
+    };
+  });
 
 }).call(this);
