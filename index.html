@@ -1,14 +1,49 @@
 <html>
 	<head>
 		<title>Kudos test</title>
-		
+
 		<link href="kudos.css" media="screen" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="jquery.cookie.js"></script>
 		<script type="text/javascript" src="kudos.js"></script>
+		<script type="text/javascript">
+			$(function()
+			{
+				// initialize kudos
+				$("figure.kudo").kudoable();
+
+				// when kudoing
+				$("figure.kudo").bind("kudo:active", function(e)
+				{
+					console.log("kudoing active");
+				});
+
+				// when not kudoing
+				$("figure.kudo").bind("kudo:inactive", function(e)
+				{
+					console.log("kudoing inactive");
+				});
+
+				// after kudo'd
+				$("figure.kudo").bind("kudo:added", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Kodo'd:", element.data('id'), ":)");
+				});
+
+				// after removing a kudo
+				$("figure.kudo").bind("kudo:removed", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Un-Kudo'd:", element.data('id'), ":(");
+				});
+			});
+		</script>
 	</head>
 	<body>
-		<figure class="kudo kudoable" id="kudo-1">	
+		<figure class="kudo kudoable" data-id="1">
 			<a class="kudobject">
 				<div class="opening"><div class="circle">&nbsp;</div></div>
 			</a>
