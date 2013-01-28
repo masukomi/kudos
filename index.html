@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Kudos test</title>
+
+		<link href="https://raw.github.com/lkorth/kudos/master/kudos.css" media="screen" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="https://raw.github.com/lkorth/kudos/master/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/lkorth/kudos/master/jquery.cookie.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/lkorth/kudos/master/kudos.js"></script>
+		<script type="text/javascript">
+			// needs to be a string for jquery.cookie
+			var postId = '1'; 
+			
+			$(function()
+			{
+				// initialize kudos
+				$("figure.kudoable").kudoable();
+				
+				// check to see if user has already kudod
+				if($.cookie(postId) == 'true') {
+					// make kudo already kudod
+					$("figure.kudoable").removeClass("animate").addClass("complete");
+					
+					// your server would take care of the proper kudos count, but because this is a
+					// static page, we need to set it here so it doesn't become -1 when you remove
+					// the kudos after a reload
+					$(".num").html(1);
+				}	
+
+				// when kudoing
+				$("figure.kudo").bind("kudo:active", function(e)
+				{
+					console.log("kudoing active");
+				});
+
+				// when not kudoing
+				$("figure.kudo").bind("kudo:inactive", function(e)
+				{
+					console.log("kudoing inactive");
+				});
+
+				// after kudo'd
+				$("figure.kudo").bind("kudo:added", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Kodo'd:", element.data('id'), ":)");
+					
+					// set cookie so user cannot kudo again for 7 days
+					$.cookie(postId, 'true', { expires: 7 });
+				});
+
+				// after removing a kudo
+				$("figure.kudo").bind("kudo:removed", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Un-Kudo'd:", element.data('id'), ":(");
+					
+					// remove cookie
+					$.removeCookie(postId);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<figure class="kudo kudoable" data-id="1">
+			<a class="kudobject">
+				<div class="opening"><div class="circle">&nbsp;</div></div>
+			</a>
+			<a href="#kudo" class="count">
+				<span class="num">0</span>
+				<span class="txt">Kudos</span>
+			</a>
+		</figure>
+	</body>
+</html>
