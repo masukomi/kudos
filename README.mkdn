@@ -11,6 +11,9 @@ Start ->
 ![post-kudo](https://github.com/masukomi/kudos/raw/master/screenshots/kudo_given.jpg)
 -> Finish.
 
+## Demo
+[here](http://lkorth.github.com/kudos/)
+
 # Basic Usage:
 
 See the index.html example for information
