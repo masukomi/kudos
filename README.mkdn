@@ -12,7 +12,7 @@ Start ->
 -> Finish.
 
 ## Demo
-[here](http://lkorth.github.com/kudos/)
+[here](http://masukomi.github.com/kudos/)
 
 # Basic Usage:
 
