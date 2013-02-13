@@ -8,8 +8,8 @@ class Kudoable
     @element.mouseenter @start
     @element.mouseleave @end
     @element.click @unkudo
-    @element.live 'touchstart', @start
-    @element.live 'touchend', @end
+    $(document).on 'touchstart', @element, @start
+    $(document).on 'touchend', @element, @end
 
   isKudoable: ->
     @element.hasClass 'kudoable'
