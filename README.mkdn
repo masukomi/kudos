@@ -18,6 +18,20 @@ Start ->
 
 See the index.html example for information
 
+```html
+    <figure class="kudo kudoable" data-id="1">
+        <a class="kudobject">
+            <div class="opening">
+                <div class="circle">&nbsp;</div>
+            </div>
+        </a>
+        <a href="#kudo" class="count">
+            <span class="num">0</span>
+            <span class="txt">Kudos</span>
+        </a>
+    </figure>
+```
+
 ```js
 $(function()
 {
@@ -33,7 +47,6 @@ $("figure.kudo").on("kudo:added", function(event)
   // do something with the element?
   console.log("Kudod", element);
 });
-
 ```
 
 ## Events
