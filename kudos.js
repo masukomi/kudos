@@ -24,8 +24,8 @@
       this.element.mouseenter(this.start);
       this.element.mouseleave(this.end);
       this.element.click(this.unkudo);
-      $(document).on('touchstart', this.element, this.start);
-      return $(document).on('touchend', this.element, this.end);
+      $(this.element).on('touchstart', this.start);
+      return $(this.element).on('touchend', this.end);
     };
 
     Kudoable.prototype.isKudoable = function() {
