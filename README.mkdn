@@ -16,6 +16,12 @@ Start ->
 
 # Basic Usage:
 
+## WordPress people
+[ahoereth](https://github.com/ahoereth) has put together [a wordpress plugin](http://wordpress.org/extend/plugins/kudos/)
+ ([source here](https://github.com/ahoereth/wordpress-kudos)) based on this. 
+
+## Everyone else
+
 See the index.html example for information
 
 ```html
