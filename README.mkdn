@@ -50,7 +50,7 @@ $("figure.kudo").on("kudo:added", function(event)
 {
   var element = $(this);
   var id = element.data('id');
-  // do something with the element?
+  // send the data to your server...
   console.log("Kudod", element);
 });
 ```
@@ -63,6 +63,18 @@ After kudoing an object it will emit the following events:
 2. `kudo:inactive` is sent when you mouse-off the object
 3. `kudo:added` is sent when you successfully kudo something
 4. `kudo:removed` is sent when you un-kudo something
+
+## Important Note
+(Primarily for people new to HTML / CSS who don't normally write back-end code.)
+
+**This is the client side of the equation**. It will work quite well, *but* without a server-side component there will be no way to sum up all the kudos. Each person's browser will know that *they* gave it a Kudo, but if you don't store the information in some centralized location there's no way they could possibly know that anyone else gave it a Kudo. This means that the maximum number anyone will see is 1 (the one they gave it) unless you send the information to server, store it there, and insert the current count every time the page is loaded. 
+
+*This is how the internet works*. This is not a limitation of this library.
+
+This codebase specifically **does not contain any back-end code** because it would not only be different in every language it would be different in every framework, and different in every usage of every framework. Storing a running count is very easy to do, but how you should go about it is unique to how you are choosing to track user interactions.
+
+### Sub-note
+This implementation stores one cookie for every Kudo given. If someone Kudos everything you put out there you'll eventually hit the maximum number of cookies you're allowed to give them. Because dynamic cookie handling is as unique to your back end as the solution to how you'll keep track of the Kudos given to a thing, this demo-code does not address this limitation. Again, it's trivial enough to do, you just have to decide how you want to do it. 
 
 ## Improvements
 Make some!  ;)
