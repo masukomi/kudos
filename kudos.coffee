@@ -42,6 +42,7 @@ class Kudoable
       @decrementCount()
       @element.removeClass 'complete'
       @element.trigger 'kudo:removed'
+    else @complete()  if event.type is "click"
 
   setCount: (count) ->
     @counter.html count
